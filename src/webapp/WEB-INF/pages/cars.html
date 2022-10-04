@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cars</title>
+    <style>table th, table td {padding: 7px;}</style>
 </head>
 <body>
-
+    <table th:border = "1px">
+        <tr>
+            <th>model</th>
+            <th>vin</th>
+            <th>numberOfSeats</th>
+        </tr>
+        <tr th:each = "car : ${cars}">
+            <td th:utext = "${car.model}">model</td>
+            <td th:utext = "${car.vin}">vin</td>
+            <td th:utext = "${car.numberOfSeats}">numberOfSeats</td>
+        </tr>
+    </table>
 </body>
 </html>
